@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang=" " dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <link rel="stylesheet" href="stylesheets/notcss.css">
+
+</head>
+
+<body>
+  <section>
+
+    <div class="leftbox">
+      <div class="content">
+        <a href="/pillForm"><h1>Add Pill </h1></a>
+
+      </div>
+      
+
+    </div>
+    <div>
+    <%- partial('navbar') %>
+  </div>
+  <br>
+    <div class="events" style="overflow:scroll; background:url('https://d2v9y0dukr6mq2.cloudfront.net/video/thumbnail/H8WuRINimqur8ud/cardio-medical-black-background-cardiogram-ecg-monitor_r2ojbm2___F0000.png';background-size:cover;)" >
+      <ul>
+      <% for(var i = 0; i < datas.length; i++){ %>
+        <li>
+          <div class="time">
+            <p class="day"><%= datas[i].days %></p>
+          </div>
+          <div class="details">
+            <h3><b>Pill Name:</b></h3>
+            <br>
+            <%= datas[i].medicine %>
+
+            <p><b>Dosage</b></p>
+            <br>
+            <%= datas[i].dosage %>
+          </div>
+          <div style="clear: both;">
+
+          </div>
+        </li>
+        <% }%>
+        <hr color:red>
+        <!-- <li>
+          <div class="time">
+            <h2>11<br><span>Nov</span></h2>
+
+          </div>
+          <div class="details">
+            <h3>dbhsdsdskksjdjbxmczkjk</h3>
+            <p>qwertyuioplkjhgfdsazxcvbnmkoplnjibhuvgycftxdrzseawq</p>
+
+          </div>
+          <div style="clear: both;">
+
+          </div>
+        </li> -->
+      </ul>
+
+    </div>
+  </section>
+</center>
+  <footer class="footer-area section-gap">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-2  col-md-6">
+          <div class="single-footer-widget">
+            <h6>Top Products</h6>
+            <ul class="footer-nav">
+              <li><a href="#">Ambulance Go</a></li>
+              <li><a href="#">Pill Reference</a></li>
+              <li><a href="#">Hospitals nearby</a></li>
+              <li><a href="#">Events Nearby</a></li>
+              <li><a href="#">Consult a Doctor</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-lg-4  col-md-6">
+          <div class="single-footer-widget mail-chimp">
+            <h6 class="mb-20">Contact Us</h6>
+            <p>
+              College Of Engineering and Technology
+            </p>
+            <h3>123-456-789</h3>
+            <h3>012-345-678-907</h3>
+          </div>
+        </div>
+        <div class="col-lg-6  col-md-12">
+          </div>
+        </div>
+      </div>
+
+    </center>
+    </div>
+  </footer>
+</body>
+
+</html>
