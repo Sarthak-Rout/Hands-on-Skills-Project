@@ -8,6 +8,18 @@ var Schema = mongoose.Schema;
 var event = require('../models/event_schema');
 var pills = require('../models/pill_schema');
 
+router.get('/', function (req, res) {
+    res.render('index');
+    // res.end();//for ending the response
+});
+router.post('/',function(req,res){
+  console.log(req.body);
+  if(req.body.username=="mahes" && req.body.password=="mahes")
+  res.redirect('/pill');
+  if(req.body.username=="sarthak" && req.body.password=="sarthak")
+  res.redirect('/pill2');
+})
+
 router.get('/consult', function(req, res) {
   res.render('form');
 });
@@ -25,6 +37,13 @@ router.get('/pill', function(req, res) {
   query.select('medicine days dosage');
   query.exec((err,data) => {
     res.render('pill_rem',{"datas":data});
+  })
+});
+router.get('/pill2', function(req, res) {
+  var query = pills.find()
+  query.select('medicine days dosage');
+  query.exec((err,data) => {
+    res.render('pill_rem2',{"datas":data});
   })
 });
 //pill page routing

@@ -33,6 +33,25 @@
 <!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="css/util.css">
 	<link rel="stylesheet" type="text/css" href="css/main.css">
+  <script type="text/javascript" src="https://cdn.emailjs.com/sdk/2.3.2/email.min.js"></script>
+    <script type="text/javascript">
+        (function(){
+           emailjs.init("user_VKsSL5NrxmBNaCFxzTiQE");
+        })();
+    </script>
+    <script type="text/javascript">
+        window.onload = function() {
+            document.getElementById('queryform').addEventListener('submit', function(event) {
+                event.preventDefault();
+                emailjs.sendForm('binayakbehera999_gmail_com', 'almedic', this)
+                .then(function(response) {
+       alert('SUCCESS!', response.status, response.text);
+    }, function(error) {
+       alert('FAILED...', error);
+    });
+            });
+        }
+    </script>
 </head>
 
 <body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
@@ -71,7 +90,6 @@
             </div>
             <div class="banner-text text-center">
               <h1 class="white">ONE STOP MEDICAL SOLUTION</h1>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod <br>tempor incididunt ut labore et dolore magna aliqua.</p>
               <a href="#contact" class="btn btn-appoint">Make an Appointment.</a>
             </div>
             <div class="overlay-detail text-center">
@@ -114,12 +132,12 @@
         </div>
         <div class="col-md-4 col-sm-4">
           <div class="service-info">
-            <a href="#contact"><div class="icon">
+            <a href="/events"><div class="icon">
               <i class="fa fa-user-md"></i>
             </div></a>
             <div class="icon-info">
-              <h4>Medical Counseling</h4>
-              <p>Takes the details of the user for online consultancy service.</p>
+              <h4>Healthcare Events</h4>
+              <p>See all the healthcare events happening in the vicinity of your area</p>
             </div>
           </div>
           <div class="service-info">
@@ -137,7 +155,7 @@
                   </div> --><div class="limiter">
 		<div class="container-login100">
 			<div class="wrap-login100 p-l-55 p-r-55 p-t-65 p-b-54">
-				<form class="login100-form validate-form">
+				<form method= "POST" class="login100-form validate-form">
 					<span class="login100-form-title p-b-49">
 						Login
 					</span>
@@ -148,10 +166,10 @@
 						<span class="focus-input100" data-symbol="&#xf206;"></span>
 					</div>
 
-					<div class="wrap-input100 validate-input" data-validate="Password is required">
+          <div class="wrap-input100 validate-input m-b-23" data-validate = "password is reauired">
 						<span class="label-input100">Password</span>
-						<input class="input100" type="password" name="pass" placeholder="Type your password">
-						<span class="focus-input100" data-symbol="&#xf190;"></span>
+						<input class="input100" type="text" name="password" placeholder="Type your password">
+						<span class="focus-input100" data-symbol="&#xf206;"></span>
 					</div>
 
 					<div class="text-right p-t-8 p-b-31">
@@ -163,9 +181,9 @@
 					<div class="container-login100-form-btn">
 						<div class="wrap-login100-form-btn">
 							<div class="login100-form-bgbtn"></div>
-							<button class="login100-form-btn">
+							<a href="/"><button class="login100-form-btn" type = "submit">
 								Login
-							</button>
+							</button></a>
 						</div>
 					</div>
 
@@ -414,7 +432,7 @@
             <div class="space"></div>
             <div id="sendmessage">Your message has been sent. Thank you!</div>
             <div id="errormessage"></div>
-            <form action="" method="post" role="form" class="contactForm">
+            <form action="" method="post" id="queryform" role="form" class="contactForm">
               <div class="form-group">
                 <input type="text" name="name" class="form-control br-radius-zero" id="name" placeholder="Your Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
                 <div class="validation"></div>
@@ -424,7 +442,7 @@
                 <div class="validation"></div>
               </div>
               <div class="form-group">
-                <input type="text" class="form-control br-radius-zero" name="subject" id="subject" placeholder="Subject" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />
+                <input type="text" class="form-control br-radius-zero" name="subject" id="subject" placeholder="department" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />
                 <div class="validation"></div>
               </div>
               <div class="form-group">
@@ -487,15 +505,13 @@
       <div class="container">
         <div class="row">
           <div class="col-md-12 text-center">
-            © Copyright Medilab Theme. All Rights Reserved
-            <div class="credits">
+                      <div class="credits">
               <!--
                 All the links in the footer should remain intact.
                 You can delete the links only if you purchased the pro version.
                 Licensing information: https://bootstrapmade.com/license/
                 Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=Medilab
               -->
-              Designed by <a href="https://bootstrapmade.com/">BootstrapMade.com</a>
             </div>
           </div>
         </div>
